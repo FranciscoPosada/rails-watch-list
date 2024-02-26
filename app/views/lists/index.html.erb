@@ -1,0 +1,21 @@
+<div class="banner" style="background-color: grey;">
+  <div class="container">
+    <h1>Letterbox:<strong>love film</strong></h1>
+    <p>Browse genres and expand your watchlist</p>
+  </div>
+</div>
+
+<div class="card-container">
+  <% @lists.each do |list| %>
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title"><%= list.name %></h5>
+        <!-- Additional content such as list details can be added here -->
+        <%= link_to "View List", list_path(list), class: "btn btn-primary" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+<button type="button"><%= link_to "Add a new list", new_list_path%></button>
+<p> </p>
